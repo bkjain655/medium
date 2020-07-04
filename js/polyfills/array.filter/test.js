@@ -2,14 +2,6 @@ require('./index');
 const moviesList = require('../movies_list.json');
 
 describe('Filter with Numbers', () => {
-    test('Filter for even numbers', () => {
-        const numbers = [1,2,3,4,5,6,7,8,9,10];
-        const data = numbers.filter(v => v % 2 === 0);
-        expect(data).toEqual([2,4,6,8,10]);
-        expect(data.length).toEqual(5);
-        expect(data).toContain(10);
-        expect(data).not.toContain(7);
-    });
     test('Filter for odd numbers', () => {
         const numbers = [1,2,3,4,5,6,7,8,9,10];
         const data = numbers.filter(v => v % 2);
