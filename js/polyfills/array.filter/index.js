@@ -11,13 +11,14 @@
  * 
  * Filter method always returns a new Array & it won't modify the original array
  */
-function filterFn(predicateFn){
+Array.prototype.filter = function(predicateFn, thisArg){
     if(!predicateFn) return [];
     const results = [];
-    this.forEach((val, index, array) => {
+    const that = thisArg || this;
+    that.forEach((val, index, array) => {
         let retVal = false;
         try {
-            retVal = predicateFn.apply(this, [val, index, array])
+            retVal = predicateFn.apply(that, [val, index, array])
         } catch(e) {
             retVal = false;
         }
@@ -27,4 +28,3 @@ function filterFn(predicateFn){
     });
     return results;
 }
-Array.prototype.filter = filterFn;
