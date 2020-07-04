@@ -24,7 +24,10 @@ describe('Filter with Numbers', () => {
         expect(data).toEqual([]);
         expect(data.length).toEqual(0);
         expect(data).not.toContain(7);
-    });
+    });   
+});
+
+describe('Exception Cases', () => {
     test('Predicate has Exception', () => {
         const numbers = [];
         const data = numbers.filter(v => {
@@ -40,7 +43,7 @@ describe('Filter with Numbers', () => {
     test('Predicate is not a function', () => {
         const numbers = [];
         expect(() => numbers.filter('predicate')).toThrowError();
-    });    
+    }); 
 });
 
 describe('Filter with Objects', () => {
