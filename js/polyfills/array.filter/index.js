@@ -12,7 +12,7 @@
  * Filter method always returns a new Array & it won't modify the original array
  */
 Array.prototype.filter = function(predicateFn, thisArg){
-    if(!predicateFn) return [];
+    if(!predicateFn || typeof predicateFn !== 'function') throw TypeError();
     const results = [];
     const that = thisArg || this;
     that.forEach((val, index, array) => {

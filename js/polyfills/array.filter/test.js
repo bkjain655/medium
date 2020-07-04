@@ -32,6 +32,14 @@ describe('Filter with Numbers', () => {
         });
         expect(data).toEqual([]);
         expect(data.length).toEqual(0);
+    });
+    test('No Predicate is passed', () => {
+        const numbers = [];
+        expect(numbers.filter).toThrow(TypeError);
+    });
+    test('Predicate is not a function', () => {
+        const numbers = [];
+        expect(() => numbers.filter('predicate')).toThrowError();
     });    
 });
 
