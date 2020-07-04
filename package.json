@@ -1,0 +1,22 @@
+{
+  "name": "learning_medium",
+  "version": "0.0.1",
+  "description": "Learning Medium for JS & Angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkjain655/medium.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bkjain655/medium/issues"
+  },
+  "homepage": "https://github.com/bkjain655/medium#readme",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
+}
