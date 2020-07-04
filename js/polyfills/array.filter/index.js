@@ -14,17 +14,18 @@
 Array.prototype.filter = function(predicateFn, thisArg){
     if(!predicateFn || typeof predicateFn !== 'function') throw TypeError();
     const results = [];
+    const size = this.length;
     const that = thisArg || this;
-    that.forEach((val, index, array) => {
+    for(let i = 0; i < size; i++) {
         let retVal = false;
         try {
-            retVal = predicateFn.apply(that, [val, index, array])
+            retVal = predicateFn.apply(that, [this[i], i, this])
         } catch(e) {
             retVal = false;
         }
         if(!!retVal){
-            results.push(val);
+            results.push(this[i]);
         }
-    });
+    }
     return results;
 }
