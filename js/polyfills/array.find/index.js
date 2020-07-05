@@ -18,7 +18,7 @@ Array.prototype.find = function(callback, thisArg) {
     const that = thisArg || this;
     for(var i = 0; i < size; i++) {
         try {
-            if(callback.apply(that,[this[i], i, this])) {
+            if(!!callback.apply(that,[this[i], i, this])) {
                 return this[i];
             }
         } catch(e) {
